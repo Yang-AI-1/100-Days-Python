@@ -17,7 +17,7 @@ with open("my_file.txt") as file:
 #"a" is the append mode. It appends text or whatever, to the file.
 
 #You can create a new file.
-with open("/Users/etyan/Desktop/my_new_file.txt",) as file1:
+with open("/Users/etyan/OneDrive/Desktop/my_file.txt",) as file1: #This is how to use the absolute file path
     contents = file1.read()
     print(contents)
 
