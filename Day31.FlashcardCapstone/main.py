@@ -31,7 +31,7 @@ def answer_card():
 
 def progress():
     """Function removes the current card from the card_records.Adds that card to a new csv file.Removes the
-    matching row from the existing csv file"""
+    matching row from the existing csv file by updating the entire card_records dataframe."""
     card_records.remove(current_card) #Removes the card from the current list
     pandas.DataFrame([current_card]).to_csv("./data/known_words.csv", mode="a",header=False)
     pandas.DataFrame(card_records).to_csv("./data/german_words.csv",index=False)
