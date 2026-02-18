@@ -3,4 +3,5 @@ __pycache__/
 *.pyc 
 venv/ 
 *.yaml 
-task.md 
+task.md
+.env
