@@ -120,3 +120,26 @@ except NoSuchElementException,StaleElementReferenceException:
           "2.Booking buttons that have not been found.\n"
           "3.Issues and Bugs partaining X-Paths.")
 
+
+#TODO.Revisions: SO I essentially gave up. I tried doing the last step but I stashed the change and I decided not to continue.
+# On a project such a s this I couldn't drag on with my Naivete. This needed a structured logical flow. Algorithm writing-
+# must be where the meat is especially if its web-driving on servers you can't control.
+# The actual revisions:
+# 1. My element identification was poor in this project. I used hard coded Id's, and although my time identification logic was clever(But stolen),
+#    It didn't satisfy. Instead I should have used attribute selection. p[id^='class-card-']  <----- something like that.
+# 2. I failed to write the retry function wrapper in case of Network errors which it handles gracefully with a number of retries
+#    Ill just go ahead and paste the code here:
+# def retry(func, retries=7, description=None):
+#     for i in range(retries):
+#         print(f"Trying {description}. Attempt: {i + 1}")
+#         try:
+#             return func()
+#         except TimeoutException:
+#             if i == retries - 1:
+#                 raise
+#             time.sleep(1)
+# 3. My error handling is very week. Ive wrapped the entire thing in a try except block. Ill never know where anything went wrong lol.
+#    Angela handles her errors sequentially. Exceptionally in the get bookings function she intentionally weaponises it incase
+#    cards dont appear on the page. 2. She during the verification for loop she searches broadly for elements with a strong text of when
+#    and passes a No such element exception proving that they arent verified cards. Thats pretty nice..
+# 4. Oerall I tried really hard. Atleast Ive learned from my experience
